@@ -2,9 +2,10 @@
   <header class="header">
   <router-link class="link" to="/"><img class="logo" src="@/assets/logo.png" alt=""></router-link>
     <ul class="menu">
-        <li><router-link class="link" to="/filmes">Filmes</router-link></li>
-        <li><router-link class="link" to="/series">Séries</router-link></li>
-        <li><router-link class="link" to="/favoritos">Favoritos</router-link></li>
+        <li><router-link class="link" to="/">Home</router-link></li>  
+        <li><router-link class="link" to="/filmes">Movies</router-link></li>
+        <li><router-link class="link" to="/series">Series</router-link></li>
+        <li><router-link class="link" to="/favorite">Favorites</router-link></li>
     </ul>
   </header>
 </template>
@@ -28,7 +29,7 @@ export default {
     padding-left: 8px;
   }
   .menu {
-    padding:0px;
+    padding:0px 10px;
     margin:0px;
     list-style:none;
 }

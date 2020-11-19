@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home.vue'
-import Search from '@/components/Search.vue'
-import Series from '@/components/Series.vue'
-import Favoritos from '@/components/Favoritos.vue'
-import Descricao from '@/components/Descricao.vue'
+import Movie from '@/components/movies/Movie.vue'
+import Series from '@/components/series/Series.vue'
+import Favorite from '@/components/Favorite.vue'
+import Description from '@/components/movies/Description.vue'
+import DescriptionSerie from '@/components/series/Description'
 
 Vue.use(Router)
 
@@ -17,18 +18,21 @@ export default new Router({
   },
   {
     path: '/filmes',
-    component: Search
+    component: Movie
   },
   {
     path:'/series',
     component: Series
   },
   {
-    path:'/favoritos',
-    component: Favoritos
+    path:'/favorite',
+    component: Favorite
   },
   {
-    path:'/descricao/:id',
-    component: Descricao
+    path:'/description/:id',
+    component: Description
+  },{
+    path:'/description-serie/:id',
+    component: DescriptionSerie
   }]
 })

@@ -17,6 +17,8 @@ export default {
     Header, Footer
   },
   created(){
+    localStorage.setItem ('movieFavorite','')
+    localStorage.setItem ('serieFavorite','')
     axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=a6e6381bba3f98f3d8d5d40dbe25d1a4&language=en-US')
       .then(response => {this.$store.state.genr = response.data.genres})
   }
@@ -30,7 +32,6 @@ export default {
   body{
     background-color: #23252e;
     margin: 0;
-
   }
   #app{
     height: 100vh;
@@ -40,5 +41,21 @@ export default {
       "header header"
       "content content"
       "footer footer"
+  }
+  input{
+    background-color: #4f4f59;
+    color: #fff;
+    width: 300px;
+  }
+  button{
+    background-color: #fff;
+    height: 20px;
+    width: 80px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  button:hover{
+    background-color: #41414d;
+    color: #fff;
   }
 </style>
