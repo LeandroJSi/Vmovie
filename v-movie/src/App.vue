@@ -19,7 +19,7 @@ export default {
   created(){
     localStorage.setItem ('movieFavorite','')
     localStorage.setItem ('serieFavorite','')
-    axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=a6e6381bba3f98f3d8d5d40dbe25d1a4&language=en-US')
+    axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.$store.state.apiKey}&language=en-US`)
       .then(response => {this.$store.state.genr = response.data.genres})
   }
 }

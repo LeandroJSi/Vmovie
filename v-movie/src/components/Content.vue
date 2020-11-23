@@ -8,7 +8,7 @@
                 <img class="card-img" v-bind:src="imageUrl + data.poster_path" alt="Card image">
             </div>
             <div v-else>
-              <img class="card-img" src="@/assets/default.png" alt="Sem poster do filme/série">
+              <img class="card-img" src="@/assets/default.png" alt="without movie poster">
             </div>
           </router-link>
         </div>
@@ -44,21 +44,19 @@ export default {
     }
   }
 }
-
 </script>
-
 <style>
   .lista{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
     grid-template-rows: repeat(2, 350px);
-    grid-gap: 10px;
+    grid-gap: 12px;
     width: 90%;
-
+    margin: 3px;
   }
-
-  li {
+  .lista li{
     list-style-type: none;
+    margin-top: 10px;
   }
   .showImg:hover{
     -webkit-transform: scale(1.1);
@@ -66,10 +64,10 @@ export default {
     transform: scale(1.1);
 }
   .imgY{
-    width: 200px;
-    height: 290px;
     margin: 0;
     position: relative;
+    width: 200px;
+
   }
   .year{
     font-size: 12px;
@@ -81,17 +79,19 @@ export default {
     width: 35px;
     display: flex;
     justify-content: center;
-
   }
   .card-img{
     width: 200px;
     height: 290px;
     margin: 0;
   }
-
+  .card-img-overlay{
+    width: 200px;
+  }
   .card-img-overlay p{
     margin: 0;
     font-size: 0.8rem;
+    word-wrap: break-word;
   }
   .card-img-overlay h4{
     margin: 0;

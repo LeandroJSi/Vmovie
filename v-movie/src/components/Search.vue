@@ -21,6 +21,9 @@
       </li>
     </ul>
     </div>
+    <ul>
+      <li></li>
+    </ul>
   </div>
 </template>
 
@@ -38,7 +41,7 @@ export default {
   },
   methods: {
     find(){
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=a6e6381bba3f98f3d8d5d40dbe25d1a4&query=${this.search}`)
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.$store.state.apiKey}&query=${this.search}`)
     .then(response => (this.movies = response.data.results))
     },
     genero(ids = [''] ){

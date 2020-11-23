@@ -69,13 +69,13 @@ export default {
      let idMovie = localStorage.getItem('movieFavorite').split(',')
       if(id != ''){
         for(let i=0; i < id.length; i++){
-          axios.get(`https://api.themoviedb.org/3/tv/${id[i]}?api_key=a6e6381bba3f98f3d8d5d40dbe25d1a4&append_to_response=videos`)
+          axios.get(`https://api.themoviedb.org/3/tv/${id[i]}?api_key=${this.$store.state.apiKey}&append_to_response=videos`)
             .then(response => (this.series.push(response.data)))
         }
       }
       if(idMovie != ''){
         for(let j=0; j < idMovie.length; j++){
-          axios.get(`https://api.themoviedb.org/3/movie/${idMovie[j]}?api_key=a6e6381bba3f98f3d8d5d40dbe25d1a4&append_to_response=videos`)
+          axios.get(`https://api.themoviedb.org/3/movie/${idMovie[j]}?api_key=${this.$store.state.apiKey}&append_to_response=videos`)
             .then(response => (this.movies.push(response.data)))
         }
       }    
@@ -109,16 +109,15 @@ export default {
 .listFavorite li{
   margin: 0 10px;
   width: 200px;
+  list-style-type: none;
 }
 .textMovie{
   margin-top: 50px;
 }
 .listMovies{
-
   width: 100%;
 }
 .listSeries{
-
   width: 100%;
 }
 .removeBtn{
@@ -135,5 +134,6 @@ export default {
   color:#fff;
   cursor: pointer;
   padding: 0;
+  outline: 0;
 }
 </style>

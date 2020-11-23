@@ -54,11 +54,10 @@ export default {
         backdrop_path: null,
         poster_path: null,
       }
-  
     }
   },
   created(){
-    axios.get(`https://api.themoviedb.org/3/movie/${this.id}?api_key=a6e6381bba3f98f3d8d5d40dbe25d1a4&append_to_response=videos`)
+    axios.get(`https://api.themoviedb.org/3/movie/${this.id}?api_key=${this.$store.state.apiKey}&append_to_response=videos`)
     .then(response => {this.movie = response.data})
   },
   filters:{
@@ -139,16 +138,18 @@ p.overview{
 }
 .favorite{
   border-radius: 4px;
+  border: none;
   font-size: 16px;
   font-family:'Robotto', sans-serif ;
   background-color:#9e515b;
   color: #fff;
   height: 25px;
+  outline:0;
 }
 .favorite:hover{
   background-color: #b81228;
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
 }
 </style>
